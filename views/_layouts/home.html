@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{block 'title'}}默认标题{{/block}}</title>
+    <!-- 类似vue里面的slot插槽功能，预留空的位置 -->
+
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    {{block 'head'}}{{/block}}
+  </head>
+
+  <body>
+    {{include '../_partials/header.html'}}
+    <!--body插槽，可以让其他页面引用并插入新的内容  -->
+    {{block 'body'}}{{/block}}
+    <!--  -->
+    {{include '../_partials/footer.html'}}
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    {{block 'script'}}{{/block}}
+  </body>
+</html>
